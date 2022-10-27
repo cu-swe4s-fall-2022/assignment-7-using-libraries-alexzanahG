@@ -25,5 +25,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: | # <<<-- that is a pike
-          cd test/unit 
-          python -m unittest test_utils 
+          cd test_processor 
+          python -m unittest test_Processor 
