@@ -1,0 +1,29 @@
+name: Unit tests #can have any name and be formatted as u want
+
+on: #yml standard is 2 spaces in
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    
+jobs:
+  code_style:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - uses: actions/checkout@v2 # must have '-' on nested steps actions/commands
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+            activate-environment: swe4s #have to specify that u want to use another environment outside of the automatic environment 'tests'
+            environment-file: environment.yml
+      - run: pycodestyle $(git ls-files "*.py") 
+      
+  unit_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: | # <<<-- that is a pike
+          cd test/unit 
+          python -m unittest test_utils 
