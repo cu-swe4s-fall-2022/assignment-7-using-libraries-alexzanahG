@@ -40,5 +40,7 @@ pip install pandas
     
 -test_processor.py
     - Unit tests for data_processor
-    
+
+-run.sh
+    -shell script that runs everything and tests
     
