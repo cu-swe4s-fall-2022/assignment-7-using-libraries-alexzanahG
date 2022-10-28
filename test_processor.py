@@ -7,7 +7,8 @@ import pandas as pd
 import csv
 
 class TestData(unittest.TestCase):
-      
+
+
     @classmethod
     def setUpClass(cls):
         np.random.seed(7)
@@ -36,6 +37,7 @@ class TestData(unittest.TestCase):
                         header = None)
         self.assertEqual(dp.get_file_dimensions('iris.data'), (150,5))  
     def test_matrix_to_file(self):
+        
         np.random.seed(7)
         matrix_file= dp.write_matrix_to_file(6,
                                              9,
@@ -56,6 +58,8 @@ class TestData(unittest.TestCase):
                          dp.get_file_dimensions('test.csv'))
         self.assertNotEqual(dp.get_file_dimensions('cow.csv'),
                             dp.get_file_dimensions('test.csv'))
+
         
 if __name__ == '__main__':
     unittest.main()
+    
