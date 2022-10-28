@@ -30,3 +30,6 @@ def write_matrix_to_file(num_rows,
                             delimiter= ',')
     
     return matrix_file
+
+if __name__ == '__main__':
+    main()
