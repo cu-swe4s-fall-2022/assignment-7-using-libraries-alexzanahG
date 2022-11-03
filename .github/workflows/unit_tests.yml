@@ -24,6 +24,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: | # <<<-- that is a pike
-          cd test_processor 
+      - run: | # <<<-- that is a pike 
           python -m unittest test_Processor 
